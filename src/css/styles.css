@@ -141,3 +141,29 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.hidden {
+  display: none !important;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 8px 16px;
+  background-color: #4e75ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
+}
+
+.loader-bottom {
+  margin: 20px auto;
+  display: none;
+}

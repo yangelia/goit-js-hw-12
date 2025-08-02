@@ -51,3 +51,30 @@ export function hideLoader() {
   const loader = document.querySelector('.loader');
   loader.style.display = 'none';
 }
+
+export function showLoadMoreButton() {
+  document.querySelector('.load-more').classList.remove('hidden');
+}
+
+export function hideLoadMoreButton() {
+  document.querySelector('.load-more').classList.add('hidden');
+}
+
+export function showBottomLoader() {
+  document.querySelector('.loader-bottom').classList.remove('hidden');
+}
+
+export function hideBottomLoader() {
+  document.querySelector('.loader-bottom').classList.add('hidden');
+}
+
+export function smoothScroll() {
+  const galleryItem = document.querySelector('.gallery-item');
+  if (galleryItem) {
+    const { height } = galleryItem.getBoundingClientRect();
+    window.scrollBy({
+      top: height * 2,
+      behavior: 'smooth',
+    });
+  }
+}
