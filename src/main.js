@@ -11,6 +11,8 @@ import {
   showBottomLoader,
   hideBottomLoader,
   smoothScroll,
+  showLoadingText,
+  hideLoadingText,
 } from './js/render-functions.js';
 
 const searchForm = document.querySelector('.form');
@@ -27,6 +29,7 @@ loadMoreBtn.addEventListener('click', handleLoadMore);
 
 async function handleSubmit(event) {
   event.preventDefault();
+  showLoader();
   const newQuery = event.target.elements['search-text'].value.trim();
 
   if (newQuery === searchQuery && currentPage > 1) {
@@ -88,13 +91,17 @@ async function handleLoadMore() {
 
   try {
     showBottomLoader();
+    showLoadingText();
+    hideLoadMoreButton();
+
     const data = await getImagesByQuery(searchQuery, currentPage, PER_PAGE);
     createGallery(data.hits);
     smoothScroll();
 
     if (currentPage * PER_PAGE >= totalHits) {
-      hideLoadMoreButton();
       showEndMessage();
+    } else {
+      showLoadMoreButton();
     }
   } catch (error) {
     iziToast.error({
@@ -105,6 +112,7 @@ async function handleLoadMore() {
     console.error(error);
   } finally {
     hideBottomLoader();
+    hideLoadingText();
   }
 }
 

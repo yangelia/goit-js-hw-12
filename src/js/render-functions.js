@@ -43,29 +43,39 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  const loader = document.querySelector('.loader');
-  loader.style.display = 'block';
+  document.querySelector('.loader').style.display = 'block';
 }
 
 export function hideLoader() {
-  const loader = document.querySelector('.loader');
-  loader.style.display = 'none';
+  document.querySelector('.loader').style.display = 'none';
 }
 
 export function showLoadMoreButton() {
-  document.querySelector('.load-more').classList.remove('hidden');
+  const loadMoreBtn = document.querySelector('.load-more');
+  if (loadMoreBtn) loadMoreBtn.style.display = 'block';
 }
 
 export function hideLoadMoreButton() {
-  document.querySelector('.load-more').classList.add('hidden');
+  const loadMoreBtn = document.querySelector('.load-more');
+  if (loadMoreBtn) loadMoreBtn.style.display = 'none';
 }
 
 export function showBottomLoader() {
-  document.querySelector('.loader-bottom').classList.remove('hidden');
+  document.querySelector('.loader-bottom').style.display = 'block';
 }
 
 export function hideBottomLoader() {
-  document.querySelector('.loader-bottom').classList.add('hidden');
+  document.querySelector('.loader-bottom').style.display = 'none';
+}
+
+export function showLoadingText() {
+  const loadingText = document.querySelector('.loading-text');
+  if (loadingText) loadingText.style.display = 'block';
+}
+
+export function hideLoadingText() {
+  const loadingText = document.querySelector('.loading-text');
+  if (loadingText) loadingText.style.display = 'none';
 }
 
 export function smoothScroll() {

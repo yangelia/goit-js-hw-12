@@ -26,10 +26,15 @@
     </header>
 
     <main>
-      <span class="loader hidden"></span>
+      <span class="loader" style="display: none"></span>
       <ul class="gallery"></ul>
-      <button type="button" class="load-more hidden">Load more</button>
-      <span class="loader loader-bottom hidden"></span>
+      <div class="loading-text" style="display: none">
+        Loading images, please wait...
+      </div>
+      <button type="button" class="load-more" style="display: none">
+        Load more
+      </button>
+      <span class="loader loader-bottom" style="display: none"></span>
     </main>
 
     <script type="module" src="./main.js"></script>
